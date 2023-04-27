@@ -1,0 +1,64 @@
+// C++ code
+#define LED_ROJA 13
+#define LED_ROJAD 12
+#define LED_AMARILLO 11
+#define LED_AMARILLOD 10
+#define LED_VERDE 9
+#define LED_VERDED 8
+int buzzer = 7;
+
+void setup()
+{
+  pinMode(LED_ROJA, OUTPUT);
+  pinMode(LED_ROJAD, OUTPUT);
+  pinMode(LED_AMARILLO, OUTPUT);
+  pinMode(LED_AMARILLOD, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(LED_VERDED, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+void loop()
+{
+
+  //LED ROJO
+  for(int i=0;i<44;i++)
+  {
+    digitalWrite(LED_ROJA, HIGH);
+    digitalWrite(LED_ROJAD, HIGH);
+    if(i % 2 == 0)
+    {
+      tone(buzzer, 1000,100);
+      delay(1000);
+    }
+  }
+  digitalWrite(LED_ROJA, LOW);
+  digitalWrite(LED_ROJAD, LOW);
+  delay(500);
+  
+  //LED AMARILLO
+  for(int j=0;j<5;j++)
+  {
+    digitalWrite(LED_AMARILLO, HIGH);
+    digitalWrite(LED_AMARILLOD, HIGH);
+    if(j % 2 == 0 && j < 4)
+    {
+      tone(buzzer, 7000,100);
+      delay(2000);
+    }
+  }
+  digitalWrite(LED_AMARILLO, LOW);
+  digitalWrite(LED_AMARILLOD, LOW);
+  delay(500);
+  
+  //LED VERDE
+  digitalWrite(LED_VERDE, HIGH);
+  digitalWrite(LED_VERDED, HIGH);  
+  delay(45000); 
+  digitalWrite(LED_VERDE, LOW);
+  digitalWrite(LED_VERDED, LOW);
+  delay(500);
+  
+
+  
+}
